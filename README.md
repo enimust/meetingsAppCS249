@@ -3,9 +3,9 @@
 Simple Meteor app for the CS249 students in Spring 2015.
 Uses three external packages:
 
-twbs:bootstrap
-jquery
-momentjs:moment
+* twbs:bootstrap
+* jquery
+* momentjs:moment
 
 To Do (though I will not do it, because it is part of the team projects)
 - make the "Add a Meeting" functionality available only for logged in users
