@@ -13,3 +13,5 @@ To Do (though I will not do it, because it is part of the team projects)
 - sort entries in the client side (right now they are only sorted on the server side,
 you need to refresh the page to see the sorted entries)
 - for logged-in users make it possible to edit or delete a meeting they have entered
+
+The current app is live at: http://meetingsappcs249.meteor.com/.
