@@ -1,0 +1,77 @@
+<head>
+  <title>Meeting App</title>
+</head>
+<!-- uses the package twbs:bootstrap -->
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Meeting Scheduler</h1>      
+      <p>Advertise your meetings on the fly. View all scheduled meetings.</p>
+    </div>
+    
+    <div class="row">
+      
+      <div class="col-md-6">
+        <p class="text-center">
+          <button class="btn btn-info btn-lg" id="addButton">Add a Meeting</button></p>
+        <div id="successMessage" class="well well-sm">Your meeting was added.</div>
+        {{> addMeetingForm }}
+      </div>
+      <div class="col-md-6">
+        <p class="text-center">
+          <button class="btn btn-warning btn-lg" id="viewButton">View Meetings</button>
+        </p>
+        {{> viewColumn }}
+      </div>
+      
+    </div> <!-- end of row -->
+    
+  </div> <!-- end of container-->
+</body>
+
+
+<!-- The template that handles the form for adding meetings to the database.
+CAREFUL! The input fields are using some default values to make it easier
+to enter dummy values. To set values such as the current date or time, you'll
+need to write Javascript code.
+-->
+
+<template name="addMeetingForm">
+  {{#if addMeeting}}
+  <form class="form-group">
+    <p><label>Title: 
+      <input type="text" class="form-control" name="meetingName" required value="some title"> </label>
+    </p>
+    <p><label>Location: 
+      <input type="text" class="form-control" name="meetingLocation" required value="some location"> </label>
+    </p>
+    <p><label>Date: 
+      <input type="date" class="form-control" name="meetingDate" required value="2015-04-29"> </label>
+    </p>
+    <p><label>Start time: 
+      <input type="time" class="form-control" name="startTime" required value="12:30"> </label>
+    </p>
+    <p><label>End time: 
+      <input type="time" class="form-control" name="endTime" required value="13:30"> </label>
+    </p>
+    <p>
+      <input type="submit" value="Submit" class="btn-sm btn-info ">
+    </p>
+  </form> 
+  {{/if}}
+</template>
+
+<!-- The template that will show the meetings stored in the database -->
+<template name="viewColumn">
+  {{#if viewMeeting}}
+  <div class="list-group">
+  {{#each meetingsList}}
+    <div class="list-group-item">
+      <span class="list-group-item-heading mName">{{name}}</span>
+      <span> in {{location}}.</span><br>
+      <span>On {{dateStr}}, {{startTimeStr}} - {{endTimeStr}}.</span>
+    </div>
+  {{/each}}
+  </div>
+  {{/if}}
+</template>

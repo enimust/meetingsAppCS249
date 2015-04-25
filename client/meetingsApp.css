@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+
+.container-fluid {
+  margin: 10px auto;
+  width: 70%;
+}
+
+#successMessage{
+  display: none;
+  text-align: center;
+  background-color: pink;
+}
+
+.mName {
+  font-weight: bold;
+  color: #a844f3;
+}
