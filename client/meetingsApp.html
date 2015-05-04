@@ -46,7 +46,7 @@ need to write Javascript code.
       <input type="text" class="form-control" name="meetingLocation" required value="some location"> </label>
     </p>
     <p><label>Date: 
-      <input type="date" class="form-control" name="meetingDate" required value="2015-04-29"> </label>
+      <input type="date" class="form-control" name="meetingDate" required value={{date}}> </label>
     </p>
     <p><label>Start time: 
       <input type="time" class="form-control" name="startTime" required value="12:30"> </label>
@@ -56,6 +56,7 @@ need to write Javascript code.
     </p>
     <p>
       <input type="submit" value="Submit" class="btn-sm btn-info ">
+      <input type="button" value="Close" class="btn-sm btn-info " id="close">
     </p>
   </form> 
   {{/if}}

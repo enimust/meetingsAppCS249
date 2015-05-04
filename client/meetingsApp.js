@@ -36,6 +36,11 @@ Template.addMeetingForm.helpers({
   
   addMeeting: function(){
     return Session.get("addMeetingFlag");
+  },
+  
+  date: function(){
+    /* show current date, needs to be in European format. */
+    return moment().format("YYYY-MM-DD");
   }
   
 });
@@ -47,7 +52,7 @@ Template.viewColumn.helpers({
   },
   
   meetingsList: function(){
-    return Meetings.find({});
+    return Meetings.find({}, {sort: {startTimeDate: 1}});
   }
   
 });
@@ -75,5 +80,9 @@ Template.addMeetingForm.events({
       // show message in the page using jQuery
       $("#successMessage").show().fadeOut(3000);
       return false;
-    }
+    },
+  
+  "click #close" : function(){
+      Session.set("addMeetingFlag", false); // make the form disappear
+  }
 })
